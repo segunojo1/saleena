@@ -1,20 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence } from "framer-motion";
-import IntroScreen from "@/components/intro-screen";
+
 import Image from "next/image";
-import Sticker from "@/components/Sticker";
-import HoverPopup from "@/components/HoverPopup";
+import Sticker from "../components/Sticker";
+import HoverPopup from "../components/HoverPopup";
+import IntroScreen from "../components/intro-screen";
 
 export default function Home() {
   const [hasEntered, setHasEntered] = useState(false);
 
   return (
     <>
-      <AnimatePresence>
-        {!hasEntered && <IntroScreen onContinue={() => setHasEntered(true)} />}
-      </AnimatePresence>
+      {!hasEntered && <IntroScreen onContinue={() => setHasEntered(true)} />}
 
       {hasEntered && <MainContent />}
     </>
@@ -171,19 +169,20 @@ export const MainContent = () => {
             className="self-start"
             message="Rare picture of being observed in an enclosed - The subject (Saleena) is seen just being Saleena."
           >
-              <Image
-                src="/assets/saleena3.png"
-                width={300}
-                height={324}
-                alt="saleena 3"
-              />
+            <Image
+              src="/assets/saleena3.png"
+              width={300}
+              height={324}
+              alt="saleena 3"
+            />
           </HoverPopup>
 
           <HoverPopup
+            popupClassName="-bottom-[45px] right-20"
             className="self-end -top-[206px]"
             message="Saleena loves listening to music. I’ve never heard her sing though."
           >
-            <div className="self-end  relative">
+            <div className="self-end animate-spin hover:paused relative">
               <Image
                 src="/assets/dj.png"
                 width={374}
@@ -194,6 +193,7 @@ export const MainContent = () => {
           </HoverPopup>
 
           <HoverPopup
+            popupClassName="-bottom-[63px] -right-28"
             className="self-start"
             message="Saleena loves playing sports. She’s really good at it."
           >
@@ -207,39 +207,34 @@ export const MainContent = () => {
             </div>
           </HoverPopup>
 
-          <HoverPopup
-            className="self-end"
-            message="Breakfast moments with style and flavor"
-          >
-            <div className="flex relative self-end mt-[307px]">
-              <Image
-                src="/assets/spoon.svg"
-                width={269}
-                height={269}
-                alt="spoon"
-                className="absolute -left-68 -top-20"
-              />
-              <Image
-                src="/assets/croissant.svg"
-                width={269}
-                height={269}
-                alt="croissant"
-                className="absolute -top-52 right-0"
-              />
-              <Image
-                src="/assets/juice.svg"
-                width={269}
-                height={269}
-                alt="juice"
-                className="w-[269px] h-[269px] relative -right-24"
-              />
-            </div>
-          </HoverPopup>
+          <div className="flex relative self-end mt-[307px]">
+            <Image
+              src="/assets/spoon.svg"
+              width={269}
+              height={269}
+              alt="spoon"
+              className="absolute -left-[330px] -top-17"
+            />
+            <p className="text-[22.02px] -tracking-[4%] font-medium font-neuemontreal w-[199px] absolute right-46 top-10">
+              Saleena loves eating. I love watching her eat.
+            </p>
+            <Image
+              src="/assets/croissant.svg"
+              width={269}
+              height={269}
+              alt="croissant"
+              className="absolute -top-52 right-15"
+            />
+            <Image
+              src="/assets/juice.svg"
+              width={269}
+              height={269}
+              alt="juice"
+              className="w-[269px] h-[269px] relative -right-10"
+            />
+          </div>
 
-          <HoverPopup
-            className="self-start"
-            message="im so ATL!!!"
-          >
+          <HoverPopup className="self-start" message="im so ATL!!!">
             <div className="self-start">
               <Image
                 src="/assets/atlanta1.svg"

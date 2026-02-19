@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Heart, Star, Flower, Sparkles, Globe, Mail, Sun, Headphones, Smile } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "../lib/utils";
 
 import Image from "next/image";
 
