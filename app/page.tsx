@@ -246,6 +246,7 @@ export const MainContent = () => {
           </HoverPopup>
 
           <HoverPopup
+            popupClassName="bottom-2 right-26"
             className="self-end"
             message="Saleena loves travelling. She’s been to 10+ countries."
           >
@@ -259,7 +260,10 @@ export const MainContent = () => {
             </div>
           </HoverPopup>
 
-          <HoverPopup message="Saleena loves planning and being organized.">
+          <HoverPopup
+            popupClassName="-bottom-[30px] -right-25"
+            message="Saleena loves planning and being organized."
+          >
             <div className="mt-10">
               <Image
                 src="/assets/calendar.svg"
@@ -270,6 +274,161 @@ export const MainContent = () => {
             </div>
           </HoverPopup>
         </div>
+      </div>
+
+      <div className="relative w-full flex flex-col items-center">
+        <Image
+          src="/assets/mail.svg"
+          width={113}
+          height={113}
+          alt="mail"
+          className="absolute top-[98px] left-[30%] rotate-12"
+        />
+        <Image
+          src="/assets/smiley.svg"
+          width={400}
+          height={400}
+          alt="Smiley"
+          className="mt-[158px]"
+        />
+        <p className="text-[22.02px]/[100%] -tracking-[4%] font-medium font-neuemontreal mt-[44px] mb-[30px]">
+          She’s got
+        </p>
+
+        <div className="relative">
+          <Image
+            src="/assets/saleena4.png"
+            width={1167}
+            height={500}
+            alt="saleena 4"
+          />
+          <p className="text-[100px]/[100%] text-white w-fit absolute bottom-[34px] left-0 right-0 mx-auto -tracking-[4%] font-medium font-neuebit mt-[15px]">
+            My favourite smile
+          </p>
+        </div>
+
+        <div className="text-[28px]/[100%] relative border-[0.81px] max-w-[1166px] rounded-[28px] border-[#F0F0EF] font-medium flex flex-col gap-[30px] -tracking-[4%] font-neuemontreal px-[146px] py-[35px] mt-[83px] ">
+          <span>
+            There are so many small things in life that people say shouldn’t
+            matter as much as they do. A quick laugh. A photo sent at random. A
+            smile caught mid-conversation. Tiny moments that come and go without
+            ceremony. But somehow, her smile has never felt like a small thing
+            to me.
+          </span>
+
+          <span>
+            It has this quiet way of changing the mood of my entire day without
+            asking for permission first. I can be busy, distracted, overwhelmed,
+            caught up in everything happening around me, and then I see her
+            smile, and everything slows down just enough for me to breathe
+            again.
+          </span>
+
+          <span>
+            It’s not just the way it looks. It’s what it means. It means she’s
+            happy. It means she’s okay. It means somewhere out there, in her own
+            world, you’re living and laughing and shining in the way only she
+            can. And knowing that brings me a kind of comfort I don’t think I
+            knew I needed until her.
+          </span>
+
+          <span>
+            If I had to pick one expression to carry with me through every busy
+            day and every quiet night, it would always be that smile. Because
+            somehow, without even trying, it reminds me of everything good.
+          </span>
+          <Image
+            src="/assets/flower3.svg"
+            width={110.77}
+            height={110.77}
+            alt="flower"
+            className="right-0 bottom-0 absolute"
+          />
+        </div>
+      </div>
+
+      <div className="flex flex-col items-center mt-[96px] relative">
+        <div className=" flex flex-col border-b-[1px] pb-10 items-center">
+          <Image
+            src="/assets/mail.svg"
+            width={113}
+            height={113}
+            alt="mail"
+            className="-left-32 absolute rotate-12"
+          />
+          <p className="text-[20px]/[100%] -tracking-[2%] font-bold font-neuebit">
+            Shes a
+          </p>
+          <h2 className="text-[100px]/[100%] font-bold -tracking-[2%] font-neuebit">
+            Sunshine in human form
+          </h2>
+          <Image
+            src="/assets/flower3.svg"
+            width={110.77}
+            height={110.77}
+            alt="flower"
+            className="right-0 bottom-0 absolute"
+          />
+        </div>
+
+        <div className="relative w-full flex flex-col justify-center mt-[100px]">
+          <div className="flex relative justify-end mr-[50px]">
+            <Image
+              src="/assets/typewriter22.png"
+              width={1007}
+              height={716}
+              alt="typewriter back"
+              className="absolute w-[1007px] left-0 right-0 bottom-0 top-0 my-auto"
+            />
+            <div className="flex flex-col z-[99999]  mr-[140px] gap-[30px] max-w-[559.2px] border-[#E5E5E5] bg-white rounded-2xl border-[0.5px] p-[23px] pb-[68px] font-neuemontreal text-[16px] font-medium">
+              <span>
+                Some people walk into a room and fill it with noise. Others walk
+                in and fill it with light. You’ve always felt like the second
+                kind to me.
+              </span>
+              <span>
+                There&apos;s something about the way you exist that feels warm
+                and easy, like sunlight through a window on a slow morning when
+                the world hasn’t fully woken up yet. Not loud. Not overwhelming.
+                Just gentle, steady warmth that makes everything feel a little
+                softer.
+              </span>
+              <span>
+                You don’t even realise how many little moments you brighten. The
+                conversations that feel lighter. The days that feel less heavy.
+                The quiet reassurance of knowing you’re there. It’s not
+                something you try to do. It’s just who you are.
+              </span>
+              <span>
+                And I think that’s what makes it so special. You shine without
+                effort. You make ordinary days feel less ordinary. And being
+                close to that kind of light — even from far away — feels like a
+                gift I didn’t know I’d be lucky enough to receive.
+              </span>
+            </div>
+          </div>
+          <div className="bg-[#FAF9F5] rounded-t-[29.85px] -mt-[210px]">
+            <Image
+              src="/assets/typewriter_transparent.svg"
+              width={1025}
+              height={1155}
+              alt="typewriter"
+              className=" z-[99999] relative right-0"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col items-center">
+        <p className="text-[20px]/[100%] -tracking-[2%] font-bold font-neuebit">
+          Shes
+        </p>
+        <h2 className="text-[100px]/[100%] font-bold -tracking-[2%] font-neuebit">
+          The prettiest girl I know
+        </h2>
+        <p className="text-[35px] font-neuebit font-bold">
+          Take a look yourself.
+        </p>
       </div>
     </section>
   );

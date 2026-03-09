@@ -54,7 +54,7 @@ export default function HoverPopup({
                 />
               </button>
             </div>
-            <span className="font-neuemontreal w-[207px] rounded-[10.7px] p-[10px] border-[#E5E5E5] border-[1px] text-[12px] font-medium bg-[#FFFFFF1A]">
+            <span className="font-neuemontreal w-[207px] rounded-[10.7px] p-[10px] border-[#E5E5E5] bg-white border-[1px] text-[12px] font-medium bg-[#FFFFFF1A]">
               {message}
             </span>
           </motion.div>
