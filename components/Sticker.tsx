@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Heart, Star, Flower, Sparkles, Globe, Mail, Sun, Headphones, Smile } from "lucide-react";
 import { cn } from "../lib/utils";
 
