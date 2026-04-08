@@ -3,7 +3,7 @@ import React from 'react'
 
 const Prettiest = () => {
   return (
-    <div className="flex flex-col items-center mt-[143px] pb-[289px]">
+    <div className="flex flex-col w-full items-center relative mt-[143px] pb-[289px]">
         <p className="text-[20px]/[100%] -tracking-[2%] font-bold font-neuebit">
           She’s
         </p>
@@ -14,7 +14,7 @@ const Prettiest = () => {
           Take a look yourself.
         </p>
 
-        <div className="mt-12 w-full max-w-[1380px]">
+        <div className="mt-12 w-full  max-w-[700px]">
           <div className="grid grid-cols-2 gap-5 rounded-[20px] p-4 md:hidden">
             <Image
               src="/assets/saleena5.png"
@@ -135,15 +135,15 @@ const Prettiest = () => {
               />
             </div>
 
+          </div>
+        </div>
             <Image
               src="/assets/flower.svg"
               width={88}
               height={88}
               alt="flower"
-              className="absolute right-6 top-[80px] animate-float-slow"
+              className="absolute -right-9  top-[100px] animate-float-slow"
             />
-          </div>
-        </div>
       </div>
   )
 }

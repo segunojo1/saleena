@@ -17,7 +17,7 @@ const CoFounder = () => {
       </div>
       <Image src="/assets/icons.svg" width={546} height={85} alt="icons" />
 
-      <div className="font-ibmplexmono p-8 pb-[64px] text-[25px]/[140%] max-w-[1185px] -tracking-[4%] flex flex-col gap-9 items-start">
+      <div className="font-ibmplexmono relative p-8 pb-[64px] text-[25px]/[140%] max-w-[1185px] -tracking-[4%] flex flex-col gap-9 items-start">
         <span>Dear Miss Tiwari:)</span>
         <span>
           There’s something incredibly special about watching someone chase
@@ -49,6 +49,13 @@ const CoFounder = () => {
           And getting to build something meaningful with someone I care about
           this deeply feels like one of the luckiest parts of my life.
         </span>
+        <Image 
+          src="/assets/love.svg"
+          width={111}
+          height={111}
+          alt="flower"
+          className="animate-float-slow absolute -left-20 bottom-0 top-0 my-auto "
+        />
       </div>
     </div>
   );
