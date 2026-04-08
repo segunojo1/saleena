@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import MobileRestrictionWrapper from "../components/MobileRestrictionWrapper";
 
 const PPNeueBit = localFont({
   src: "/fonts/ppneuebit-bold.otf",
@@ -39,7 +40,7 @@ export default function RootLayout({
       <body
         className={`${PPNeueBit.variable} ${PPMondWest.variable} ${PPNeueMontreal.variable} ${IBMPlexMono.variable} antialiased`}
       >
-        {children}
+        <MobileRestrictionWrapper>{children}</MobileRestrictionWrapper>
       </body>
     </html>
   );

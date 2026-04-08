@@ -1,11 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Image from "next/image";
 import Sticker from "../components/Sticker";
 import HoverPopup from "../components/HoverPopup";
 import IntroScreen from "../components/intro-screen";
+import ScrambleText from "../components/ScrambleText";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 export default function Home() {
   const [hasEntered, setHasEntered] = useState(false);
@@ -20,6 +23,115 @@ export default function Home() {
 }
 
 export const MainContent = () => {
+  const planeRef = useRef<HTMLImageElement | null>(null);
+  const triggerRef = useRef<HTMLDivElement | null>(null);
+  const carRef = useRef<HTMLImageElement | null>(null);
+  const carTriggerRef = useRef<HTMLDivElement | null>(null);
+  const parallaxRef = useRef<HTMLDivElement | null>(null);
+  const parallaxImageRef = useRef<HTMLImageElement | null>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (!planeRef.current) return;
+
+    const planeTl = gsap.timeline({
+      repeat: -1,
+      scrollTrigger: {
+        trigger: triggerRef.current,
+        start: "top bottom",
+        toggleActions: "play none none none",
+      },
+    });
+
+    planeTl
+      .fromTo(
+        planeRef.current,
+        { x: 0, y: 0, opacity: 0, scaleX: 1, rotation: -5 },
+        {
+          x: -1000,
+          y: -12,
+          opacity: 1,
+          duration: 3.8,
+          ease: "power3.out",
+          rotation: 4,
+          scaleX: 1,
+        },
+      )
+      .to(planeRef.current, {
+        x: 0,
+        y: 8,
+        duration: 3.8,
+        ease: "power3.inOut",
+        scaleX: -1,
+        rotation: -4,
+      });
+
+    let carTl: gsap.core.Timeline | null = null;
+
+    if (carRef.current) {
+      carTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: triggerRef.current,
+          start: "top 100%",
+          toggleActions: "play none none none",
+          invalidateOnRefresh: true,
+        },
+      });
+
+      carTl.fromTo(
+        carRef.current,
+        { x: 300, opacity: 1 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 4,
+          ease: "power3.out",
+        },
+      );
+    }
+
+    return () => {
+      planeTl.scrollTrigger?.kill();
+      planeTl.kill();
+      carTl?.scrollTrigger?.kill();
+      carTl?.kill();
+    };
+  }, []);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (!parallaxRef.current || !parallaxImageRef.current) return;
+
+    const container = parallaxRef.current;
+    const image = parallaxImageRef.current;
+
+    const parallaxTween = gsap.to(image, {
+      y: () => {
+        const travelDistance = Math.max(
+          0,
+          image.offsetHeight - container.clientHeight,
+        );
+
+        return -travelDistance;
+      },
+      ease: "none",
+      scrollTrigger: {
+        trigger: container,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+        invalidateOnRefresh: true,
+      },
+    });
+
+    return () => {
+      parallaxTween.scrollTrigger?.kill();
+      parallaxTween.kill();
+    };
+  }, []);
+
   return (
     <section className="min-h-screen bg-white mx-auto flex flex-col items-center w-full max-w-[1440px] pt-16 px-[43px]">
       <div className="relative flex flex-col items-center w-full min-h-[1024px]  h-full">
@@ -295,12 +407,14 @@ export const MainContent = () => {
           She’s got
         </p>
 
-        <div className="relative">
+        <div ref={parallaxRef} className="relative h-[500px] overflow-hidden rounded-[20px]">
           <Image
             src="/assets/saleena4.png"
+            ref={parallaxImageRef}
             width={1167}
-            height={500}
+            height={1600}
             alt="saleena 4"
+            className="w-full h-auto will-change-transform"
           />
           <p className="text-[100px]/[100%] text-white w-fit absolute bottom-[34px] left-0 right-0 mx-auto -tracking-[4%] font-medium font-neuebit mt-[15px]">
             My favourite smile
@@ -610,9 +724,10 @@ export const MainContent = () => {
           </span>
         </div>
       </div>
-      
-      <div className="relative w-full">
-        <Image
+
+      <div className=" w-full flex flex-col items-center">
+        <div className="flex relative w-full flex-col items-center py-[91px] pb-[130px]">
+          <Image
             src="/assets/glass-flower.png"
             width={104}
             height={119}
@@ -631,23 +746,139 @@ export const MainContent = () => {
             width={104}
             height={119}
             alt="popcorn"
-            className="absolute -bottom-10 left-50"
+            className="absolute bottom-10 left-50"
           />
           <Image
             src="/assets/circle.svg"
             width={102}
             height={102}
             alt="gaming"
-            className="absolute bottom-0 right-70"
+            className="absolute bottom-20 right-70"
           />
-
-        <div className="flex flex-col items-center py-[91px] pb-[70px]">
           <p className="text-[20px]/[100%] -tracking-[2%] font-bold font-neuebit">
             Saleena Tiwari is
           </p>
           <h2 className="text-[100px]/[100%] font-bold -tracking-[2%] font-neuebit">
             The cutest ever!!
           </h2>
+        </div>
+
+        <div className="mb-6">
+          <Image
+            src="/assets/saleena11.png"
+            width={1102}
+            height={849}
+            alt="saleena"
+          />
+        </div>
+
+        <div className="flex justify-between gap-[135px] mb-[35px]">
+          <h2 className="text-[100px]/[100%] font-bold -tracking-[2%] font-neuebit self-start">
+            Saleena
+          </h2>
+          <Image src="/assets/leaf.svg" width={400} height={400} alt="leaf" />
+          <h2 className="text-[100px]/[100%] font-bold -tracking-[2%] font-neuebit self-end">
+            Tiwari
+          </h2>
+        </div>
+        <h2 className="text-[143.57px]/[100%] font-normal -tracking-[2%] font-mondwest mb-[430px]">
+          ist einfach die Beste
+        </h2>
+
+        <div className="max-w-[739px] relative pb-32">
+          <ScrambleText
+            text="no matter where in the world we are. i still care about you bae."
+            duration={800}
+          />
+          <Image
+            src="/assets/done.svg"
+            width={144}
+            height={144}
+            alt="done"
+            className="right-0 absolute bottom-0"
+          />
+        </div>
+      </div>
+
+      <div>
+        <Image
+          src="/assets/mapp.svg"
+          width={1300}
+          height={763}
+          alt="map"
+          className=""
+        />
+      </div>
+
+      <div ref={triggerRef} className="mt-6 flex flex-col items-center w-full">
+        <div className="flex items-center justify-between mb-5 w-full">
+          <Image
+            src="/assets/globee.svg"
+            width={173}
+            height={173}
+            alt="globe"
+            className=""
+          />
+          <Image
+            src="/assets/heart.svg"
+            width={189}
+            height={189}
+            alt="heart"
+            className=""
+          />
+        </div>
+        <h2 className="text-[100px]/[100%] font-bold -tracking-[2%] font-neuebit mb-[50px]">
+          Worth every mile
+        </h2>
+        <p className="text-[40px]/[100%] font-medium -tracking-[4%] font-neuemontreal max-w-[1184px]">
+          Entfernung misst nur den Raum, nie die Bedeutung. Und jeder Kilometer
+          zwischen uns ist ein Versprechen auf den Tag, an dem wir ihn
+          überwinden.
+        </p>
+        <Image
+          src="/assets/airplane.svg"
+          ref={planeRef}
+          width={189}
+          height={189}
+          alt="airplane"
+          className="mr-[150px] self-end mt-4"
+        />
+
+        <div
+          ref={carTriggerRef}
+          className="flex mt-[187px] justify-between w-full"
+        >
+          <Image
+            src="/assets/sign.svg"
+            width={189}
+            height={189}
+            alt="sign"
+            className=""
+          />
+          <div className="flex items-center">
+            <Image
+              src="/assets/house.svg"
+              width={189}
+              height={189}
+              alt="house"
+              className=""
+            />
+            <Image
+              src="/assets/car.svg"
+              width={189}
+              height={189}
+              alt="car"
+              ref={carRef}
+              className=""
+            />
+          </div>
+          <Image
+            src="/assets/flag.svg"
+            width={189}
+            height={189}
+            alt="flag"
+            className=""
+          />
         </div>
       </div>
     </section>
