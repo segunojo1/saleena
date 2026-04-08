@@ -13,7 +13,6 @@ export default function MobileRestrictionWrapper({ children }: MobileRestriction
   const pathname = usePathname();
   const isMobile = useIsMobile();
   const isLandingPage = pathname === '/';
-  console.log(isMobile, isLandingPage);
   
 
   // If it's a mobile device and not on the landing page, show the restriction
