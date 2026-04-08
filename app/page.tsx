@@ -378,7 +378,7 @@ export const MainContent = () => {
               width={1007}
               height={716}
               alt="typewriter back"
-              className="absolute w-[1007px] left-0 right-0 bottom-0 top-0 my-auto"
+              className="absolute w-[1007px] -left-7 bottom-0 top-0 my-auto"
             />
             <div className="flex flex-col z-[99999]  mr-[140px] gap-[30px] max-w-[559.2px] border-[#E5E5E5] bg-white rounded-2xl border-[0.5px] p-[23px] pb-[68px] font-neuemontreal text-[16px] font-medium">
               <span>
@@ -419,9 +419,9 @@ export const MainContent = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mt-[143px] pb-[289px]">
         <p className="text-[20px]/[100%] -tracking-[2%] font-bold font-neuebit">
-          Shes
+          She’s
         </p>
         <h2 className="text-[100px]/[100%] font-bold -tracking-[2%] font-neuebit">
           The prettiest girl I know
@@ -429,6 +429,226 @@ export const MainContent = () => {
         <p className="text-[35px] font-neuebit font-bold">
           Take a look yourself.
         </p>
+
+        <div className="mt-12 w-full max-w-[1380px]">
+          <div className="grid grid-cols-2 gap-5 rounded-[20px] p-4 md:hidden">
+            <Image
+              src="/assets/saleena5.png"
+              width={300}
+              height={420}
+              alt="Saleena portrait 5"
+              className="w-full rounded-[8px] object-cover"
+            />
+            <Image
+              src="/assets/saleena6.png"
+              width={300}
+              height={420}
+              alt="Saleena portrait 6"
+              className="w-full rounded-[8px] object-cover"
+            />
+            <Image
+              src="/assets/saleena7.png"
+              width={300}
+              height={420}
+              alt="Saleena portrait 7"
+              className="w-full rounded-[8px] object-cover"
+            />
+            <Image
+              src="/assets/saleena8.png"
+              width={300}
+              height={420}
+              alt="Saleena portrait 8"
+              className="w-full rounded-[8px] object-cover"
+            />
+            <Image
+              src="/assets/saleena9.png"
+              width={300}
+              height={420}
+              alt="Saleena portrait 9"
+              className="w-full rounded-[8px] object-cover"
+            />
+            <Image
+              src="/assets/saleena10.png"
+              width={300}
+              height={420}
+              alt="Saleena portrait 10"
+              className="w-full rounded-[8px] object-cover"
+            />
+          </div>
+
+          <div className="relative hidden h-[1320px] w-full overflow-hidden rounded-[28px] md:block">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.08),_transparent_38%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.06),_transparent_30%)]" />
+
+            <div className="absolute left-[2%] top-[130px] -rotate-8 animate-float-slow">
+              <Image
+                src="/assets/saleena6.png"
+                width={235}
+                height={346}
+                alt="Saleena portrait 6"
+                className="rounded-[18px] object-cover shadow-2xl shadow-black/40 transition-transform duration-300 hover:scale-[1.03]"
+              />
+            </div>
+
+            <div className="absolute left-1/2 top-[40px] -translate-x-1/2 rotate-2 animate-float-medium">
+              <Image
+                src="/assets/saleena5.png"
+                width={430}
+                height={320}
+                alt="Saleena portrait 5"
+                className="rounded-[18px] object-cover shadow-2xl shadow-black/40 transition-transform duration-300 hover:scale-[1.02]"
+              />
+            </div>
+
+            <div
+              className="absolute right-[2%] top-[140px] rotate-6 animate-float-slow"
+              style={{ animationDelay: "1s" }}
+            >
+              <Image
+                src="/assets/saleena7.png"
+                width={220}
+                height={160}
+                alt="Saleena portrait 7"
+                className="rounded-[18px] object-cover shadow-2xl shadow-black/40 transition-transform duration-300 hover:scale-[1.04]"
+              />
+            </div>
+
+            <div
+              className="absolute left-[12%] top-[615px] -rotate-4 animate-float-medium"
+              style={{ animationDelay: "0.8s" }}
+            >
+              <Image
+                src="/assets/saleena8.png"
+                width={395}
+                height={442}
+                alt="Saleena portrait 8"
+                className="rounded-[18px] object-cover shadow-2xl shadow-black/40 transition-transform duration-300 hover:scale-[1.02]"
+              />
+            </div>
+
+            <div
+              className="absolute right-[3%] top-[500px] rotate-3 animate-float-slow"
+              style={{ animationDelay: "1.4s" }}
+            >
+              <Image
+                src="/assets/saleena9.png"
+                width={220}
+                height={160}
+                alt="Saleena portrait 9"
+                className="rounded-[18px] object-cover shadow-2xl shadow-black/40 transition-transform duration-300 hover:scale-[1.04]"
+              />
+            </div>
+
+            <div
+              className="absolute right-[10%] top-[840px] -rotate-[2deg] animate-float-medium"
+              style={{ animationDelay: "1.2s" }}
+            >
+              <Image
+                src="/assets/saleena10.png"
+                width={290}
+                height={397}
+                alt="Saleena portrait 10"
+                className="rounded-[18px] object-cover shadow-2xl shadow-black/40 transition-transform duration-300 hover:scale-[1.03]"
+              />
+            </div>
+
+            <Image
+              src="/assets/flower.svg"
+              width={88}
+              height={88}
+              alt="flower"
+              className="absolute right-6 top-[80px] animate-float-slow"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col items-center border-[#F0F0EF] border">
+        <div className="flex items-center gap-[39px] py-[97px] ">
+          <h2 className="font-neuebit text-[100px]/[100%] font-bold -tracking-[2%]">
+            The best Co-founder
+          </h2>
+          <Image
+            src="/assets/cohort.svg"
+            width={92.75}
+            height={92.75}
+            alt="Cohort"
+          />
+        </div>
+        <Image src="/assets/icons.svg" width={546} height={85} alt="icons" />
+
+        <div className="font-ibmplexmono p-8 pb-[64px] text-[25px]/[140%] max-w-[1185px] -tracking-[4%] flex flex-col gap-9 items-start">
+          <span>Dear Miss Tiwari:)</span>
+          <span>
+            There’s something incredibly special about watching someone chase
+            their ideas and refuse to let them stay as “just ideas.” I’ve seen
+            the way you think, the way you solve problems, the way you approach
+            challenges with this quiet determination that doesn’t need to be
+            loud to be powerful.
+          </span>
+          <span>
+            Working with you on Cohort has shown me a side of you that goes far
+            beyond anything people see at first glance. The late nights, the
+            brainstorming, the tiny details you care about, the way you keep
+            going even when things get difficult. It’s inspiring in a way that’s
+            hard to put into simple words.
+          </span>
+          <span>
+            I’m genuinely grateful that out of all the people in the world, you
+            chose to build something with me. That you trusted me enough to
+            share this journey, these ideas, and this vision. It means more to
+            me than I probably say out loud.
+          </span>
+          <span>
+            You’re incredibly smart in the way that really matters, not just in
+            what you know, but in how you think, how you question things, how
+            you see possibilities where others might stop. Watching you work
+            reminds me why I admire you so much.
+          </span>
+          <span>
+            And getting to build something meaningful with someone I care about
+            this deeply feels like one of the luckiest parts of my life.
+          </span>
+        </div>
+      </div>
+      
+      <div className="relative w-full">
+        <Image
+            src="/assets/glass-flower.png"
+            width={104}
+            height={119}
+            alt="glass flower"
+            className="absolute -top-10 left-30"
+          />
+          <Image
+            src="/assets/gaming.png"
+            width={102}
+            height={102}
+            alt="gaming"
+            className="absolute -top-10 right-70"
+          />
+          <Image
+            src="/assets/popcorn.svg"
+            width={104}
+            height={119}
+            alt="popcorn"
+            className="absolute -bottom-10 left-50"
+          />
+          <Image
+            src="/assets/circle.svg"
+            width={102}
+            height={102}
+            alt="gaming"
+            className="absolute bottom-0 right-70"
+          />
+
+        <div className="flex flex-col items-center py-[91px] pb-[70px]">
+          <p className="text-[20px]/[100%] -tracking-[2%] font-bold font-neuebit">
+            Saleena Tiwari is
+          </p>
+          <h2 className="text-[100px]/[100%] font-bold -tracking-[2%] font-neuebit">
+            The cutest ever!!
+          </h2>
+        </div>
       </div>
     </section>
   );
