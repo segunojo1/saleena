@@ -11,14 +11,14 @@ const CutestEver = () => {
                 width={104}
                 height={119}
                 alt="glass flower"
-                className="absolute -top-10 left-30"
+                className="absolute -top-10 left-30 animate-float-slow"
               />
               <Image
                 src="/assets/gaming.png"
                 width={102}
                 height={102}
                 alt="gaming"
-                className="absolute -top-10 right-70"
+                className="absolute -top-10 right-70 animate-float-slow"
               />
               <Image
                 src="/assets/popcorn.svg"
@@ -55,7 +55,7 @@ const CutestEver = () => {
               <h2 className="text-[100px]/[100%] font-bold -tracking-[2%] font-neuebit self-start">
                 Saleena
               </h2>
-              <Image src="/assets/leaf.svg" width={400} height={400} alt="leaf" />
+              <Image src="/assets/leaf.svg" width={400} height={400} alt="leaf" className='animate-float-slow'/>
               <h2 className="text-[100px]/[100%] font-bold -tracking-[2%] font-neuebit self-end">
                 Tiwari
               </h2>

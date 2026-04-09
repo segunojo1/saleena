@@ -17,6 +17,7 @@ import Prettiest from "../components/Prettiest";
 import CoFounder from "../components/CoFounder";
 import CutestEver from "../components/CutestEver";
 import Footer from "../components/Footer";
+import SecretLoveHunt from "../components/secret";
 
 export default function Home() {
   const [hasEntered, setHasEntered] = useState(false);
@@ -49,7 +50,9 @@ export const MainContent = () => {
           className=""
         />
       </div>
+      <SecretLoveHunt />
       <Footer />
+
     </section>
   );
 };
